@@ -27,20 +27,20 @@ emptyFields();
 // DIRECTIONS: div element with class "input-field" that surrounds each form label and input is the element to change. You will add the "input-valid" or "input-invalid" class to this div.
 
 //Change from WHITE to RED
-function redTest(name) {
- let customername = document.getElementById("name");
- if (customername.length == 0) {
-   //this makes the box red by itself but isnt working inside the function
-   document.getElementById("name").style.backgroundColor = "red";
-  }  else  {
-   //alert("Incomplete Form");
-   document.getElementById("name").style.backgroundColor = "white";
-  }
+// function redTest(name) {
+//  let customername = document.getElementById("name");
+//  if (customername.length == 0) {
+//    //this makes the box red by itself but isnt working inside the function
+//    document.getElementById("name").style.backgroundColor = "red";
+//   }  else  {
+//    //alert("Incomplete Form");
+//    document.getElementById("name").style.backgroundColor = "white";
+//   }
  
- return ;  
- }
+//  return ;  
+//  }
 
- redTest();
+//  redTest();
 
 // function red (field){
 //   //field.classList.remove();
@@ -49,3 +49,8 @@ function redTest(name) {
 
 // }
 
+function change (){
+  let customername = document.getElementById("name");
+  customername.classList.remove("input-field input-valid");
+  customername.classList.aa("input-field input-invalid);
+}
