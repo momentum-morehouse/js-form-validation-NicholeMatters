@@ -1,40 +1,37 @@
 // Each field is required. If there is no user input in that field, mark it as invalid.
 // invalid fields will turn red
-function emptyFields(){
-//this function will review the whole document for empty fields
-//required fields: name, year, make, model, date, number of days, credit card, CVV and expiration date
-let customer = document.querySelector ('#name');
-let cyear = document.querySelector ('#car-year');
-let cmake = document.querySelector ('#car-make');
-let cmodel = document.querySelector ('#car-model');
-let pdate = document.querySelector ('#start-date');
-let amtdays = document.querySelector ('#days');
-let cc = document.querySelector ('#credit-card-field');
-let cCVV = document.querySelector ('#cvv');
-let ccDate = document.querySelector ('#expiration-date');
+let form = document.querySelector("#parking-form");
+//this is keep the form from erasing when its submitted incomplete
+form.addEventListener("submit", function (event){
+  event.preventDefault();
+  //have to call on the whole field and the indiviual id
+  let nameField = document.querySelector("#name-field")
+  let customer = document.querySelector("#name")
+  if (customer.value === '' || customer.value === null ) {
+   //this makes the box red by itself but isnt working inside the function
+      alert("Name is required")
+   nameField.classList.add("input-invalid")
+   
+  }  else  {
+   //alert("Incomplete Form");
+   nameField.classList.remove("input-invalid")
+   nameField.classList.add("input-valid")
+  }
 
-
-if (customer.length === 0){
- document.getElementById("name").style.backgroundColor = "red";
-}
-// red(customer);
-
-}
-
-emptyFields();
-
+  
+});
 
 // DIRECTIONS: div element with class "input-field" that surrounds each form label and input is the element to change. You will add the "input-valid" or "input-invalid" class to this div.
 
 //Change from WHITE to RED
-// function redTest(name) {
+// function redTest() {
 //  let customername = document.getElementById("name");
-//  if (customername.length == 0) {
+//  if (customername.value === 0) {
 //    //this makes the box red by itself but isnt working inside the function
-//    document.getElementById("name").style.backgroundColor = "red";
+//    customername.classList.add("input-valid");
 //   }  else  {
 //    //alert("Incomplete Form");
-//    document.getElementById("name").style.backgroundColor = "white";
+//    customername.classList.add("input-invalid");
 //   }
  
 //  return ;  
@@ -49,8 +46,19 @@ emptyFields();
 
 // }
 
-function change (){
-  let customername = document.getElementById("name");
-  customername.classList.remove("input-field input-valid");
-  customername.classList.aa("input-field input-invalid);
-}
+// function change (){
+//   let customerName = document.querySelectorAll(".input-field input-valid");
+//   for (let names of customerName) {
+//   names.addEventListener('click', function(){  
+//   //names.classList.remove(".input-field input-valid")
+//   names.classList.add("input-field input-invalid")
+//   }
+//   );
+//   };
+// }
+
+// change();
+
+//Goal is to select valid or invalid and possible make a function to do that
+
+
